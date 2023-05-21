@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>pixel by pixel</title>
+  <meta name="description" content="Create highly detailed pixelated art with lots of controllers.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+  <!-- <link href="https://www.pixelbypixel.com/" rel="canonical"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="keywords" conent="pixel art, line art, gray scale, gery scale, detailed, art, tool, pixel, pixelation">
+
+  <!-- Open Graph Elements-->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="pixelbypixel.com/">
+  <meta property="og:image:width" content="279">
+  <meta property="og:image:height" content="279">
+  <meta property="og:title" content="Create highly detailed pixelated art with lots of controllers.">
+  <meta property="og:description"
+    content="Welcome to pixelbypixel, your go-to tool for pixelation, line art and grayscale image generator.">
+  <!-- <meta property="og:url" content="https://www.pixelbypixel.com"> -->
+  <!-- <meta property="og:image" content="https://www.pixelbypixel.com/og-image.jpg"> -->
+
+  <!-- Twitter OG -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@pixelbypixel">
+  <!-- <meta property="twitter:url" content="https://www.pixelbypixel.com/"> -->
+  <meta property="twitter:title" content="Create highly detailed pixelated art with lots of controllers.">
+  <meta property="twitter:description"
+    content="Welcome to pixelbypixel, your go-to tool for pixelation, line art and grayscale image generator.">
+  <!-- <meta name="twitter:image" content="https://www.profsera.com/og-image.jpg"> -->
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/site.webmanifest">
+
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00aba9"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#004aad">
+
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/slim.select.css">
+
+</head>
+
+<body>
+  <header>
+    <img src="./assets/logo.png" alt="logo" id="logo">
+    <h1>pixel by pixel</h1>
+  </header>
+
+  <section class="pixelbypixel">
+    <div class="drawer-toggle square-icon">CONTROLLERS</div>
+    <div class="drawer">
+      <div class="selectors">
+        <!--upload image -->
+        <label id="uploadimage" for="imageInput">
+          Upload Image
+          <input type="file" class="inputbtn" id="imageInput">
+        </label>
+        <!-- px per sq -->
+        <label for="pxPerSq" class="inputbtn">
+          Detail Level (Min:2, Max: 50)
+          <input value="8" type="number" id="pxPerSq">
+        </label>
+        <!-- lineart -->
+        <label for="lineart" class="inputbtn">
+          Line Art
+          <input type="checkbox" id="lineart">
+        </label>
+        <!-- TODO : Dot Art: Start -->
+        <!-- dotart -->
+        <!-- <label for="dotart" class="inputbtn">
+                  Dot Art
+                  <input type="checkbox" id="dotart">
+                </label> -->
+        <!-- TODO : Dot Art: End -->
+        <!-- greyscale -->
+        <label for="greyscale" class="inputbtn">
+          Greyscale
+          <input type="checkbox" id="greyscale">
+        </label>
+        <!-- palette -->
+        <label for="palette" class="inputbtn">
+          palette
+          <input type="checkbox" id="palette">
+        </label>
+
+        <!-- flip horizontally -->
+        <label for="flipH" class="inputbtn">
+          Flip Horizontally
+          <input type="checkbox" id="flipH">
+        </label>
+
+        <!-- Detect Image Color -->
+        <label for="imageColor" class="inputbtn">
+          Detect Image Color
+          <input type="checkbox" id="imageColor">
+        </label>
+      </div>
+      <div class="controllers">
+        <!-- color palette example-->
+        <div class="colorpalette">
+          <div class="text">
+            <button class="btn small" id="changepalette">Select palette</button>
+            <select name="paletteselector" id="paletteselector" style="font-family: 'VT323', monospace"></select>
+          </div>
+          <div class="icons" id="palettecolor"></div>
+        </div>
+        <div class="downloadimage-wrapper">
+          <button id="downloadimage" class="btn small call">Download Image</button>
+        </div>
+      </div>
+    </div>
+    <div class="main-section">
+      <div class="detected-colorpalette hide">
+        <div class="text">
+          <span>Color Palette:</span>
+        </div>
+        <div class="detected-colorboxes" id="detected-palettecolor"></div>
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
+  </section>
+
+  <img src="assets/giraffe.jpg" id="defaultImage" alt="giraffe image">
+  <script src="js/pixelbypixel.js"></script>
+  <script src="js/slim.select.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- loader-->
+  <div class="loader">
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+
+</html>
